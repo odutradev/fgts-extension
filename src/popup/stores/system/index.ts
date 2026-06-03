@@ -1,11 +1,8 @@
 import { create } from 'zustand'
 
-type FeatureState = {
-  features: Record<string, boolean>
-  toggleFeature: (key: string) => void
-}
+import type { SystemStore } from './types'
 
-export const useFeatureStore = create<FeatureState>((set) => ({
+export const useSystemStore = create<SystemStore>((set) => ({
   features: {
     blockAds: true,
     darkTheme: false,

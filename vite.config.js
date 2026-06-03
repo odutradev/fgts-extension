@@ -13,8 +13,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@popup': path.resolve(__dirname, './src/popup'),
-      '@scripts': path.resolve(__dirname, './src/scripts'),
-      '@store': path.resolve(__dirname, './src/store')
+      '@scripts': path.resolve(__dirname, './src/scripts')
     }
   },
   build: {
