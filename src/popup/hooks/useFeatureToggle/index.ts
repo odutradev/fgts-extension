@@ -25,30 +25,18 @@ export const useFeatureToggle = () => {
       updateStorage({ monochromatic: true })
       return
     }
-
-    if (key === 'monochromaticTimerEnabled') {
-      if (newValue) {
-        const expiration = Date.now() + features.monochromaticTimerDuration * 60 * 1000
-        updateStorage({
-          monochromaticTimerEnabled: true,
-          monochromaticExpiration: expiration
-        })
-        return
-      }
-      updateStorage({
-        monochromaticTimerEnabled: false,
-        monochromaticExpiration: 0
-      })
-      return
-    }
   }
 
   const handleDurationChange = (minutes: number) => {
-    const updates: Partial<SystemFeatures> = { monochromaticTimerDuration: minutes }
-    if (features.monochromaticTimerEnabled) {
-      updates.monochromaticExpiration = Date.now() + minutes * 60 * 1000
+    if (minutes === 0) {
+      updateStorage({ monochromaticTimerEnabled: false, monochromaticExpiration: 0 })
+      return
     }
-    updateStorage(updates)
+    updateStorage({
+      monochromaticTimerDuration: minutes,
+      monochromaticTimerEnabled: true,
+      monochromaticExpiration: Date.now() + minutes * 60 * 1000
+    })
   }
 
   return { features, handleToggle, handleDurationChange }

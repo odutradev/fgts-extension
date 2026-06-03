@@ -1,4 +1,4 @@
-import { Box, Button, FormControlLabel, FormGroup, Typography, styled } from '@mui/material'
+import { Box, FormGroup, ToggleButton, ToggleButtonGroup, Typography, styled } from '@mui/material'
 
 export const ListContainer = styled(FormGroup)({
   display: 'flex',
@@ -53,62 +53,38 @@ export const FeatureDescription = styled(Typography)({
   lineHeight: 1.4
 })
 
-export const ActionButton = styled(Button)({
-  minWidth: 'auto',
-  padding: '4px',
-  color: '#888888',
-  borderRadius: '4px',
-  backgroundColor: 'transparent',
-  '&:hover': {
-    color: '#ffffff',
-    backgroundColor: 'rgba(255, 255, 255, 0.05)'
+export const TimerButtonGroup = styled(ToggleButtonGroup)({
+  display: 'flex',
+  width: '100%',
+  gap: '6px',
+  '& .MuiToggleButtonGroup-grouped': {
+    flex: 1,
+    margin: '0 !important',
+    border: '1px solid rgba(255, 255, 255, 0.05) !important',
+    borderRadius: '4px !important'
   }
 })
 
-export const TimerPanel = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '8px',
-  padding: '10px',
-  borderRadius: '4px',
-  backgroundColor: 'rgba(255, 255, 255, 0.03)',
-  border: '1px solid rgba(255, 255, 255, 0.05)'
-})
-
-export const TimerRow = styled(Box)({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between'
-})
-
-export const TimerLabel = styled(Typography)({
-  fontSize: '0.75rem',
-  fontWeight: 500,
-  color: '#aaaaaa',
-  textTransform: 'uppercase',
-  fontFamily: 'monospace'
-})
-
-export const DurationContainer = styled(Box)({
-  display: 'flex',
-  gap: '6px',
-  marginTop: '4px'
-})
-
-export const DurationPill = styled(Button, {
-  shouldForwardProp: (prop) => prop !== 'active'
-})<{ active?: boolean }>(({ active }) => ({
+export const TimerButton = styled(ToggleButton)({
   flex: 1,
   fontSize: '0.65rem',
   fontFamily: 'monospace',
-  padding: '4px 0',
-  borderRadius: '4px',
-  color: active ? '#000000' : '#888888',
-  backgroundColor: active ? '#ffffff' : 'rgba(255, 255, 255, 0.03)',
-  border: `1px solid ${active ? '#ffffff' : 'rgba(255, 255, 255, 0.05)'}`,
+  padding: '5px 0',
+  color: '#888888',
+  backgroundColor: 'rgba(255, 255, 255, 0.03)',
   minWidth: 'auto',
+  textTransform: 'none',
+  '& svg': {
+    fontSize: '0.9rem'
+  },
+  '&.Mui-selected': {
+    color: '#000000',
+    backgroundColor: '#ffffff',
+    '&:hover': {
+      backgroundColor: '#e0e0e0'
+    }
+  },
   '&:hover': {
-    backgroundColor: active ? '#ffffff' : 'rgba(255, 255, 255, 0.08)',
-    borderColor: active ? '#ffffff' : 'rgba(255, 255, 255, 0.1)'
+    backgroundColor: 'rgba(255, 255, 255, 0.08)'
   }
-}))
+})

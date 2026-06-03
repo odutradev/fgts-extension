@@ -4,3 +4,8 @@ export type FeatureMetadata = {
 }
 
 export type FeatureLabelMap = Record<string, FeatureMetadata>
+
+export type TimerDuration = {
+  value: number
+  label: string | null
+}
