@@ -1,17 +1,19 @@
 import { Switch } from '@mui/material'
 
-import { useSystemStore } from '@popup/stores/system'
-import type { FeatureLabelMap } from './types'
+import { useFeatureToggle } from '@popup/hooks/useFeatureToggle'
 import { FeatureItem, ListContainer } from './styles'
+
+import type { FeatureLabelMap } from './types'
 
 const FEATURE_LABELS: FeatureLabelMap = {
   blockAds: 'Block Ads',
   darkTheme: 'Dark Theme',
-  analytics: 'Analytics'
+  analytics: 'Analytics',
+  monochromatic: 'Monochromatic'
 }
 
 export const FeatureList = () => {
-  const { features, toggleFeature } = useSystemStore()
+  const { features, handleToggle } = useFeatureToggle()
 
   return (
     <ListContainer>
@@ -19,7 +21,7 @@ export const FeatureList = () => {
         <FeatureItem
           key={key}
           labelPlacement="start"
-          control={<Switch checked={value} onChange={() => toggleFeature(key)} size="small" />}
+          control={<Switch checked={value} onChange={() => handleToggle(key)} size="small" />}
           label={FEATURE_LABELS[key] ?? key}
         />
       ))}
