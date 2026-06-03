@@ -1,5 +1,6 @@
 const MONOCHROMATIC_STYLE_ID = 'fgts-monochromatic'
 const BLUR_IMAGES_STYLE_ID = 'fgts-blur-images'
+const BLUR_IMAGES_CSS = 'img { filter: blur(8px) !important; transition: filter 0.3s ease !important; } img:hover { filter: blur(0px) !important; }'
 let timerId: number | null = null
 
 const injectStyle = (id: string, css: string) => {
@@ -27,7 +28,7 @@ const applyBlurImagesFilter = (enabled: boolean) => {
     return
   }
   if (existing) return
-  injectStyle(BLUR_IMAGES_STYLE_ID, 'img { filter: blur(8px) !important; }')
+  injectStyle(BLUR_IMAGES_STYLE_ID, BLUR_IMAGES_CSS)
 }
 
 const handleTimerSetup = (enabled: boolean, timerEnabled: boolean, expiration: number) => {
