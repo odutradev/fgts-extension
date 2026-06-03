@@ -1,13 +1,8 @@
 import { Switch } from '@mui/material'
 
+import { FeatureCard, FeatureDescription, FeatureHeader, FeatureInfo, FeatureTitle, FeatureTitleContainer, ListContainer } from './styles'
 import { useFeatureToggle } from '@popup/hooks/useFeatureToggle'
-import { FeatureItem, ListContainer } from './styles'
-
-import type { FeatureLabelMap } from './types'
-
-const FEATURE_LABELS: FeatureLabelMap = {
-  monochromatic: 'Monochromatic'
-}
+import { FEATURE_METADATA } from './defaultData'
 
 export const FeatureList = () => {
   const { features, handleToggle } = useFeatureToggle()
@@ -15,12 +10,21 @@ export const FeatureList = () => {
   return (
     <ListContainer>
       {Object.entries(features).map(([key, value]) => (
-        <FeatureItem
-          key={key}
-          labelPlacement="start"
-          control={<Switch checked={value} onChange={() => handleToggle(key)} size="small" />}
-          label={FEATURE_LABELS[key] ?? key}
-        />
+        <FeatureCard key={key}>
+          <FeatureHeader>
+            <FeatureInfo>
+              <FeatureTitleContainer>
+                <FeatureTitle>{FEATURE_METADATA[key]?.label ?? key}</FeatureTitle>
+              </FeatureTitleContainer>
+              <FeatureDescription>{FEATURE_METADATA[key]?.description}</FeatureDescription>
+            </FeatureInfo>
+            <Switch
+              checked={Boolean(value)}
+              onChange={() => handleToggle(key as keyof typeof features)}
+              size="small"
+            />
+          </FeatureHeader>
+        </FeatureCard>
       ))}
     </ListContainer>
   )

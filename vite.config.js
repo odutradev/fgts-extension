@@ -1,17 +1,18 @@
-import { defineConfig } from 'vite';
-import { crx } from '@crxjs/vite-plugin';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from 'vite'
+import { crx } from '@crxjs/vite-plugin'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
-import manifest from './manifest.json';
+import manifest from './manifest.json'
 
 export default defineConfig({
   plugins: [
     react(),
-    crx({ manifest }),
+    crx({ manifest })
   ],
   resolve: {
     alias: {
+      '@assets': path.resolve(__dirname, './assets'),
       '@popup': path.resolve(__dirname, './src/popup'),
       '@scripts': path.resolve(__dirname, './src/scripts')
     }
@@ -29,4 +30,4 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 800
   }
-});
+})
