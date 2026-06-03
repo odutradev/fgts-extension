@@ -1,14 +1,16 @@
 {
   "manifest_version": 3,
   "name": "FGTS - Fundo de Garantia da Tela Segura",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": ".",
   "permissions": [
     "storage",
     "activeTab",
     "tabs"
   ],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "icons": {
     "16": "assets/icons/icon16.png",
     "32": "assets/icons/icon32.png",
@@ -27,8 +29,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["src/scripts/index.ts"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/scripts/index.ts"
+      ],
       "run_at": "document_start"
     }
   ]
