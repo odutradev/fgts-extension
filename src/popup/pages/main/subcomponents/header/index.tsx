@@ -1,14 +1,13 @@
-import { MdShield } from 'react-icons/md'
+import LetreiroBadge from '@assets/icons/letreiro.svg'
 
-import { HeaderContainer, IconWrapper, Title, TitleGroup, VersionBadge } from './styles'
+import { HeaderContainer, IconWrapper, TitleGroup, VersionBadge } from './styles'
 
 export const Header = () => (
   <HeaderContainer>
     <TitleGroup>
       <IconWrapper>
-        <MdShield size={15} />
+        <LetreiroBadge />
       </IconWrapper>
-      <Title>FGTS</Title>
     </TitleGroup>
     <VersionBadge>v1.0.0</VersionBadge>
   </HeaderContainer>

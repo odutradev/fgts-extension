@@ -15,16 +15,11 @@ export const TitleGroup = styled(Box)({
 export const IconWrapper = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  color: '#ffffff'
-})
-
-export const Title = styled(Typography)({
-  fontSize: '0.85rem',
-  fontWeight: 700,
-  letterSpacing: '0.22em',
-  textTransform: 'uppercase',
   color: '#ffffff',
-  fontFamily: 'monospace'
+  '& svg': {
+    height: '20px',
+    width: 'auto'
+  }
 })
 
 export const VersionBadge = styled(Typography)({
