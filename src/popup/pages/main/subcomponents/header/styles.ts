@@ -15,9 +15,8 @@ export const TitleGroup = styled(Box)({
 export const IconWrapper = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  color: '#ffffff',
-  '& svg': {
-    height: '20px',
+  '& img': {
+    height: '30px',
     width: 'auto'
   }
 })
