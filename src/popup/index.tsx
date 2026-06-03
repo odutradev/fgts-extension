@@ -1,8 +1,8 @@
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material'
 import { createRoot } from 'react-dom/client'
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material'
 import { StrictMode } from 'react'
 
-import { App } from '@/popup/App'
+import { App } from '@popup/App'
 
 const theme = createTheme({ palette: { mode: 'light' } })
 const rootElement = document.getElementById('root')

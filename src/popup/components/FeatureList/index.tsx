@@ -1,6 +1,6 @@
 import { FormControlLabel, Switch } from '@mui/material'
 
-import { useFeatureStore } from '@/store/useFeatureStore'
+import { useFeatureStore } from '@popup/store/useFeatureStore'
 import { ListContainer } from './styles'
 
 export const FeatureList = () => {

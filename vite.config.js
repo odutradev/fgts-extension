@@ -12,7 +12,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@popup': path.resolve(__dirname, './src/popup'),
+      '@scripts': path.resolve(__dirname, './src/scripts'),
+      '@store': path.resolve(__dirname, './src/store')
     }
   },
   build: {

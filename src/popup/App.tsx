@@ -1,6 +1,6 @@
-import { FeatureList } from '@/popup/components/FeatureList'
+import { FeatureList } from '@popup/components/FeatureList'
+import { Header } from '@popup/components/Header'
 import { MainContainer, Separator } from './styles'
-import { Header } from '@/popup/components/Header'
 
 export const App = () => {
   return (
