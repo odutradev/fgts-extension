@@ -3,9 +3,9 @@
   "outputPath": "fgts-extension-merged.txt",
   "port": 9876,
   "useGitignore": true,
-  "onStartCommand": "",
-  "onStartCommandLogs": false,
-  "onUpsertCommand": "",
+  "onStartCommand": "npm run dev",
+  "onStartCommandLogs": true,
+  "onUpsertCommand": "npm run build",
   "ignorePatterns": [
     "node_modules",
     "**/node_modules",
