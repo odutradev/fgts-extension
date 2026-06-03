@@ -4,6 +4,10 @@ export const FEATURE_METADATA: FeatureLabelMap = {
   monochromatic: {
     label: 'Monocromático',
     description: 'Deixa a tela em tons de cinza'
+  },
+  blurImages: {
+    label: 'Borrar Imagens',
+    description: 'Aplica desfoque em todas as imagens da página'
   }
 }
 

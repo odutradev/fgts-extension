@@ -6,7 +6,8 @@ const DEFAULT_FEATURES: SystemFeatures = {
   monochromatic: false,
   monochromaticTimerEnabled: false,
   monochromaticTimerDuration: 5,
-  monochromaticExpiration: 0
+  monochromaticExpiration: 0,
+  blurImages: false
 }
 
 export const useSystemStore = create<SystemStore>(() => ({

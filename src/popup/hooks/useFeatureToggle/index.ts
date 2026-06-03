@@ -10,21 +10,18 @@ export const useFeatureToggle = () => {
   }
 
   const handleToggle = (key: keyof SystemFeatures) => {
-    const currentValue = features[key]
-    const newValue = !currentValue
+    const newValue = !features[key]
 
     if (key === 'monochromatic') {
       if (!newValue) {
-        updateStorage({
-          monochromatic: false,
-          monochromaticTimerEnabled: false,
-          monochromaticExpiration: 0
-        })
+        updateStorage({ monochromatic: false, monochromaticTimerEnabled: false, monochromaticExpiration: 0 })
         return
       }
       updateStorage({ monochromatic: true })
       return
     }
+
+    updateStorage({ [key]: newValue } as Partial<SystemFeatures>)
   }
 
   const handleDurationChange = (minutes: number) => {

@@ -3,6 +3,7 @@ export type SystemFeatures = {
   monochromaticTimerEnabled: boolean
   monochromaticTimerDuration: number
   monochromaticExpiration: number
+  blurImages: boolean
 }
 
 export type SystemStore = {

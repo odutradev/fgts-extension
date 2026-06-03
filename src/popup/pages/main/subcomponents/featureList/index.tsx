@@ -41,6 +41,21 @@ export const FeatureList = () => {
           ))}
         </TimerButtonGroup>
       </FeatureCard>
+      <FeatureCard>
+        <FeatureHeader>
+          <FeatureInfo>
+            <FeatureTitleContainer>
+              <FeatureTitle>{FEATURE_METADATA.blurImages.label}</FeatureTitle>
+            </FeatureTitleContainer>
+            <FeatureDescription>{FEATURE_METADATA.blurImages.description}</FeatureDescription>
+          </FeatureInfo>
+          <Switch
+            checked={features.blurImages}
+            onChange={() => handleToggle('blurImages')}
+            size="small"
+          />
+        </FeatureHeader>
+      </FeatureCard>
     </ListContainer>
   )
 }
