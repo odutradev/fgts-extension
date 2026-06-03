@@ -14,10 +14,6 @@
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
   },
-  "background": {
-    "service_worker": "src/background/index.js",
-    "type": "module"
-  },
   "action": {
     "default_popup": "popup.html",
     "default_title": "FGTS - Fundo de Garantia da Tela Segura",
