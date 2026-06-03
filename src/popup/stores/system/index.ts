@@ -3,9 +3,6 @@ import { create } from 'zustand'
 import type { SystemStore } from './types'
 
 const DEFAULT_FEATURES = {
-  blockAds: true,
-  darkTheme: false,
-  analytics: true,
   monochromatic: false
 }
 

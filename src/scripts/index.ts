@@ -9,15 +9,19 @@ type ContentScriptMessage = {
 const applyMonochromaticFilter = (enabled: boolean) => {
   const existing = document.getElementById(MONOCHROMATIC_STYLE_ID)
 
-  if (enabled && !existing) {
-    const style = document.createElement('style')
-    style.id = MONOCHROMATIC_STYLE_ID
-    style.textContent = 'html { filter: grayscale(100%) !important; }'
-    document.head?.appendChild(style)
+  if (!enabled) {
+    existing?.remove()
     return
   }
 
-  existing?.remove()
+  if (existing) return
+
+  const style = document.createElement('style')
+  const target = document.head ?? document.documentElement
+
+  style.id = MONOCHROMATIC_STYLE_ID
+  style.textContent = 'html { filter: grayscale(100%) !important; }'
+  target.appendChild(style)
 }
 
 chrome.storage.local.get('monochromatic', (result) => {

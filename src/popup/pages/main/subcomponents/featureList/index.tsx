@@ -6,9 +6,6 @@ import { FeatureItem, ListContainer } from './styles'
 import type { FeatureLabelMap } from './types'
 
 const FEATURE_LABELS: FeatureLabelMap = {
-  blockAds: 'Block Ads',
-  darkTheme: 'Dark Theme',
-  analytics: 'Analytics',
   monochromatic: 'Monochromatic'
 }
 
