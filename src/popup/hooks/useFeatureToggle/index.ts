@@ -36,5 +36,9 @@ export const useFeatureToggle = () => {
     })
   }
 
-  return { features, handleToggle, handleDurationChange }
+  const handleMinSizeChange = (size: number) => {
+    updateStorage({ blurImagesMinSize: size })
+  }
+
+  return { features, handleToggle, handleDurationChange, handleMinSizeChange }
 }

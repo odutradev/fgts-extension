@@ -1,4 +1,4 @@
-import { Box, FormGroup, ToggleButton, ToggleButtonGroup, Typography, styled } from '@mui/material'
+import { Box, FormGroup, ToggleButton, ToggleButtonGroup, Typography, Slider, styled } from '@mui/material'
 
 export const ListContainer = styled(FormGroup)({
   display: 'flex',
@@ -86,5 +86,54 @@ export const TimerButton = styled(ToggleButton)({
   },
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.08)'
+  }
+})
+
+export const SliderContainer = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '6px',
+  padding: '4px 4px 0 4px',
+  marginTop: '4px'
+})
+
+export const SliderHeader = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between'
+})
+
+export const SliderLabel = styled(Typography)({
+  fontSize: '0.7rem',
+  color: '#888888'
+})
+
+export const SliderValue = styled(Typography)({
+  fontSize: '0.7rem',
+  fontWeight: 600,
+  color: '#ffffff',
+  fontFamily: 'monospace'
+})
+
+export const StyledSlider = styled(Slider)({
+  color: '#ffffff',
+  height: 4,
+  padding: '10px 0',
+  '& .MuiSlider-thumb': {
+    height: 12,
+    width: 12,
+    backgroundColor: '#ffffff',
+    border: '2px solid currentColor',
+    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
+      boxShadow: 'inherit'
+    }
+  },
+  '& .MuiSlider-track': {
+    border: 'none',
+    backgroundColor: '#ffffff'
+  },
+  '& .MuiSlider-rail': {
+    opacity: 0.2,
+    backgroundColor: 'rgba(255, 255, 255, 0.4)'
   }
 })

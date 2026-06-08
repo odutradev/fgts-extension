@@ -4,6 +4,7 @@ export type SystemFeatures = {
   monochromaticTimerDuration: number
   monochromaticExpiration: number
   blurImages: boolean
+  blurImagesMinSize: number
 }
 
 export type SystemStore = {
