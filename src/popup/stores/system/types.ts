@@ -5,6 +5,11 @@ export type SystemFeatures = {
   monochromaticExpiration: number
   blurImages: boolean
   blurImagesMinSize: number
+  waBlurMessages: boolean
+  waBlurPreviews: boolean
+  waBlurNames: boolean
+  waBlurPhotos: boolean
+  waBlurStickers: boolean
 }
 
 export type SystemStore = {

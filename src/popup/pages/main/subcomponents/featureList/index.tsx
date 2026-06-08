@@ -4,6 +4,7 @@ import { Switch } from '@mui/material'
 import { FeatureCard, FeatureDescription, FeatureHeader, FeatureInfo, FeatureTitle, FeatureTitleContainer, ListContainer, TimerButton, TimerButtonGroup, SliderContainer, SliderHeader, SliderLabel, SliderValue, StyledSlider } from './styles'
 import { FEATURE_METADATA, TIMER_DURATIONS } from './defaultData'
 import { useFeatureToggle } from '@popup/hooks/useFeatureToggle'
+import { WaPrivacyCard } from './subcomponents/waPrivacyCard'
 
 import type { MouseEvent } from 'react'
 
@@ -76,6 +77,7 @@ export const FeatureList = () => {
           </SliderContainer>
         )}
       </FeatureCard>
+      <WaPrivacyCard />
     </ListContainer>
   )
 }

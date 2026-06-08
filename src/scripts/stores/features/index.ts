@@ -8,7 +8,12 @@ const DEFAULT_FEATURES: SystemFeatures = {
   monochromaticTimerDuration: 5,
   monochromaticExpiration: 0,
   blurImages: false,
-  blurImagesMinSize: 100
+  blurImagesMinSize: 100,
+  waBlurMessages: false,
+  waBlurPreviews: false,
+  waBlurNames: false,
+  waBlurPhotos: false,
+  waBlurStickers: false
 }
 
 export const useFeaturesStore = create<FeaturesStore>(() => ({
