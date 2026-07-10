@@ -15,8 +15,10 @@ const CLASS_MAP: Record<WaFeatureKey, string> = {
 const WA_KEYS = Object.keys(CLASS_MAP) as WaFeatureKey[]
 
 const run = () => {
-  const { features } = useFeaturesStore.getState()
   const { body } = document
+  if (!body) return
+
+  const { features } = useFeaturesStore.getState()
   const hasAny = WA_KEYS.some(key => features[key])
 
   if (!hasAny) {
@@ -32,5 +34,6 @@ const run = () => {
 
 if (window.location.hostname === 'web.whatsapp.com') {
   useFeaturesStore.subscribe(run)
+  document.addEventListener('DOMContentLoaded', run, { once: true })
   run()
 }
