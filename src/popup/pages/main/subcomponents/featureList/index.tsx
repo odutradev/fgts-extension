@@ -2,8 +2,9 @@ import { MdAllInclusive } from 'react-icons/md'
 import { Switch } from '@mui/material'
 
 import { FeatureCard, FeatureDescription, FeatureHeader, FeatureInfo, FeatureTitle, FeatureTitleContainer, ListContainer, TimerButton, TimerButtonGroup, SliderContainer, SliderHeader, SliderLabel, SliderValue, StyledSlider } from './styles'
-import { FEATURE_METADATA, TIMER_DURATIONS } from './defaultData'
+import { ShortcutImageCard } from './subcomponents/shortcutImageCard'
 import { useFeatureToggle } from '@popup/hooks/useFeatureToggle'
+import { FEATURE_METADATA, TIMER_DURATIONS } from './defaultData'
 import { WaPrivacyCard } from './subcomponents/waPrivacyCard'
 
 import type { MouseEvent } from 'react'
@@ -78,6 +79,7 @@ export const FeatureList = () => {
         )}
       </FeatureCard>
       <WaPrivacyCard />
+      <ShortcutImageCard />
     </ListContainer>
   )
 }

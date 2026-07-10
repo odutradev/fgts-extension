@@ -10,6 +10,8 @@ export type SystemFeatures = {
   waBlurNames: boolean
   waBlurPhotos: boolean
   waBlurStickers: boolean
+  shortcutImage: boolean
+  shortcutImageUrl: string
 }
 
 export type SystemStore = {

@@ -13,7 +13,9 @@ const DEFAULT_FEATURES: SystemFeatures = {
   waBlurPreviews: false,
   waBlurNames: false,
   waBlurPhotos: false,
-  waBlurStickers: false
+  waBlurStickers: false,
+  shortcutImage: false,
+  shortcutImageUrl: ''
 }
 
 export const useSystemStore = create<SystemStore>(() => ({
